@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and limitations under the License.
  */
 
-package com.github.fabriciolfj.kafkaadmin.exemplosistem.datagenerator;
+package com.github.fabriciolfj.kafkaadmin.exemplesistemone.datagenerator;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.fabriciolfj.kafkaadmin.exemplosistem.domain.DeliveryAddress;
-import com.github.fabriciolfj.kafkaadmin.exemplosistem.domain.LineItem;
-import com.github.fabriciolfj.kafkaadmin.exemplosistem.domain.PosInvoice;
+import com.github.fabriciolfj.kafkaadmin.exemplesistemone.domain.DeliveryAddress;
+import com.github.fabriciolfj.kafkaadmin.exemplesistemone.domain.LineItem;
+import com.github.fabriciolfj.kafkaadmin.exemplesistemone.domain.PosInvoice;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -70,10 +70,11 @@ public class InvoiceGenerator {
         PosInvoice invoice = invoices[getIndex()];
         invoice.setInvoiceNumber(Integer.toString(getNewInvoiceNumber()));
         invoice.setCreatedTime(System.currentTimeMillis());
-        if ("HOME-DELIVERY".equalsIgnoreCase(invoice.getDeliveryType())) {
-            DeliveryAddress deliveryAddress = AddressGenerator.getInstance().getNextAddress();
-            invoice.setDeliveryAddress(deliveryAddress);
-        }
+
+        AddressGenerator addressGenerator = AddressGenerator.getInstance();
+        DeliveryAddress deliveryAddress = addressGenerator.getNextAddress();
+        invoice.setDeliveryAddress(deliveryAddress);
+
         int itemCount = getNoOfItems();
         Double totalAmount = 0.0;
         List<LineItem> items = new ArrayList<>();

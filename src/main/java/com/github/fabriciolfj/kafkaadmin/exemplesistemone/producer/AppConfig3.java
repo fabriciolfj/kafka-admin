@@ -1,4 +1,4 @@
-package com.github.fabriciolfj.kafkaadmin.exemplosistem.producer;
+package com.github.fabriciolfj.kafkaadmin.exemplesistemone.producer;
 
 public class AppConfig3 {
 

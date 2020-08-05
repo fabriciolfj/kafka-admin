@@ -13,15 +13,17 @@
  * See the License for the specific language governing permissions and limitations under the License.
  */
 
-package com.github.fabriciolfj.kafkaadmin.exemplosistem.datagenerator;
+package com.github.fabriciolfj.kafkaadmin.exemplesistemone.datagenerator;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.fabriciolfj.kafkaadmin.exemplosistem.domain.DeliveryAddress;
+import com.github.fabriciolfj.kafkaadmin.exemplesistemone.domain.DeliveryAddress;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
 import java.util.Random;
 
-class AddressGenerator {
+@Slf4j
+public class AddressGenerator {
     private static final AddressGenerator ourInstance = new AddressGenerator();
     private final Random random;
 
@@ -31,11 +33,12 @@ class AddressGenerator {
         return random.nextInt(100);
     }
 
-    static AddressGenerator getInstance() {
+    public static AddressGenerator getInstance() {
         return ourInstance;
     }
 
     private AddressGenerator() {
+        log.info("Iniciando address");
         final String DATAFILE = "src/main/resources/data/address.json";
         final ObjectMapper mapper;
         random = new Random();
@@ -43,11 +46,12 @@ class AddressGenerator {
         try {
             addresses = mapper.readValue(new File(DATAFILE), DeliveryAddress[].class);
         } catch (Exception e) {
+            log.info("address error " + e.getMessage());
             throw new RuntimeException(e);
         }
     }
 
-    DeliveryAddress getNextAddress() {
+    public DeliveryAddress getNextAddress() {
         return addresses[getIndex()];
     }
 

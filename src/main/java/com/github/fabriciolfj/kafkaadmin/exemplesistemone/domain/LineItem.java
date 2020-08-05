@@ -1,4 +1,4 @@
-package com.github.fabriciolfj.kafkaadmin.exemplosistem.domain;
+package com.github.fabriciolfj.kafkaadmin.exemplesistemone.domain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

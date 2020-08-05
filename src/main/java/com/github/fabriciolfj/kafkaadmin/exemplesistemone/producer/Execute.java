@@ -1,7 +1,7 @@
-package com.github.fabriciolfj.kafkaadmin.exemplosistem.producer;
+package com.github.fabriciolfj.kafkaadmin.exemplesistemone.producer;
 
-import com.github.fabriciolfj.kafkaadmin.exemplosistem.domain.PosInvoice;
-import com.github.fabriciolfj.kafkaadmin.exemplosistem.serde.JsonSerializer;
+import com.github.fabriciolfj.kafkaadmin.exemplesistemone.domain.PosInvoice;
+import com.github.fabriciolfj.kafkaadmin.exemplesistemone.serde.JsonSerializer;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 public class Execute {
 
     public static void main(String[] args) {
-        String topicName = "invoice";
+        String topicName = "invoice-two";
 
         Properties properties = new Properties();
         properties.put(ProducerConfig.CLIENT_ID_CONFIG, AppConfig3.applicationId);

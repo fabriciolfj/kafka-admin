@@ -1,18 +1,14 @@
-package com.github.fabriciolfj.kafkaadmin.exemplosistem.producer;
+package com.github.fabriciolfj.kafkaadmin.exemplesistemone.producer;
 
-import com.github.fabriciolfj.kafkaadmin.exemplosistem.domain.PosInvoice;
-import com.github.fabriciolfj.kafkaadmin.exemplosistem.serde.JsonSerializer;
+import com.github.fabriciolfj.kafkaadmin.exemplesistemone.domain.PosInvoice;
+import com.github.fabriciolfj.kafkaadmin.exemplesistemone.serde.JsonSerializer;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
-import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public class ExecuteTwo {

@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and limitations under the License.
  */
 
-package com.github.fabriciolfj.kafkaadmin.exemplosistem.datagenerator;
+package com.github.fabriciolfj.kafkaadmin.exemplesistemone.datagenerator;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.fabriciolfj.kafkaadmin.exemplosistem.domain.LineItem;
+import com.github.fabriciolfj.kafkaadmin.exemplesistemone.domain.LineItem;
 
 import java.io.File;
 import java.util.Random;

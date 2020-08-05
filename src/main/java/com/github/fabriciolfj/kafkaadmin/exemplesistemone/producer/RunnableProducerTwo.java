@@ -1,7 +1,7 @@
-package com.github.fabriciolfj.kafkaadmin.exemplosistem.producer;
+package com.github.fabriciolfj.kafkaadmin.exemplesistemone.producer;
 
-import com.github.fabriciolfj.kafkaadmin.exemplosistem.datagenerator.InvoiceGenerator;
-import com.github.fabriciolfj.kafkaadmin.exemplosistem.domain.PosInvoice;
+import com.github.fabriciolfj.kafkaadmin.exemplesistemone.datagenerator.InvoiceGenerator;
+import com.github.fabriciolfj.kafkaadmin.exemplesistemone.domain.PosInvoice;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
