@@ -1,0 +1,4 @@
+bootstrap.servers: localhost:9092, localhost:9093
+
+logging:
+  level.org.springframework: INFO
